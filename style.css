@@ -6,10 +6,89 @@
 
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css');
 
+
+:root{
+  --font-primary: "Baloo Da 2", serif;
+  --font-secundary: "Josefin Slab", sans-serif;
+  --font-action: "", sans-serif;
+
+  --color-primary: #02C71C;
+  --color-secundary: #00660e;
+}
+
 *{
   margin: 0;
   padding: 0;
   position: relative;
+  list-style: none;
+  text-decoration: none;
+}
+.burger{
+  width: 3em;
+  height: 3em;
+  position: fixed;
+  z-index: 100;
+  right: 1.3em;
+  top: 1.5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: right 1s 0.1s;
+}
+.show-menu .burger{
+  right: 16rem;
+}
+.line{
+  width: 100%;
+  height: 0.5em;
+  background-color: white;
+  box-shadow: 0.1em 0.1em 1px black;
+  transition: transform 1s;
+}
+.show-menu #line1{
+  transform-origin: 0%;
+  transform: rotateZ(45deg);
+  background-color: rgb(216, 216, 216);
+  top: 0.2em;
+  box-shadow: none;
+}
+.show-menu #line2{
+  opacity: 0;
+  visibility: hidden;
+
+}
+.show-menu #line3{
+  transform-origin: 0%;
+  transform: rotateZ(-45deg);
+  background-color: rgb(216, 216, 216);
+  top: -0.2em;
+  box-shadow: none;
+}
+.burger span{
+  position: absolute;
+  left: 2em;
+  height: 2em;
+  width: 5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-secundary);
+  color: white;
+  font-size: 1.4em;
+  font-family: var(--font-action);
+  clip-path: polygon(10% 0, 100% 0, 100% 100%, 10% 100%, 10% 80%, 0 50%, 10% 23%);
+  opacity: 0;
+}
+.burger span::before{
+  content: "";
+  position: absolute;
+}
+.show-menu .burger:hover span{
+  opacity: 1;
+}
+.burger span>p{
+  margin-left: 0.5em;
 }
 header{
   width: 100%;
@@ -40,7 +119,7 @@ header{
 .banner h1{
   color: white;
   font-size: 3.5em;
-  font-family: 'baloo da 2', serif;
+  font-family: var(--font-primary);
   font-weight: 200;
   text-shadow: 0.1em 0.1em 5px black;
   line-height: 1em;
@@ -50,7 +129,7 @@ header{
   animation: movebanner 1s 0.5s forwards;
 }
 .banner p{
-  font-family: 'Josefin Slab', Arial, Helvetica, sans-serif;
+  font-family: var(--font-secundary);
   color: white;
   font-size: 2.5em;
   text-shadow: 0.1em 0.1em 5px black;
@@ -60,15 +139,15 @@ header{
   animation: movebanner 1s 0.8s forwards;
 }
 .banner button{
-  font-family: 'Muli', sans-serif;
+  font-family: var(--font-action);
   font-size: 1em;
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 0.2em;
   color: white;
-  background: #02C71C;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #02C71C, #00660e);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #02C71C, #00660e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: var(--color-primary);  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, var(--color-primary), var(--color-secundary));  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, var(--color-primary), var(--color-secundary)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   padding: 0.5em 2em 0.5em 2em;
   border: none;
   border-radius: 2px;
@@ -90,4 +169,59 @@ header{
     transform: translateY(1rem);
     opacity: 100%;
   }
+}
+.sidebar{
+  width: 20em;
+  height: 100vh;
+  background-color: white;
+  position: fixed;
+  right: -20em;
+  top: 0;
+  box-shadow: 10px 10px 20px black;
+  z-index: 99;
+  transition: all 1s;
+}
+.show-menu .sidebar{
+  right: 0;
+}
+.menu{
+  position: absolute;
+  margin-left: 50%;
+  margin-top: 70%;
+  transform: translate(-50%, -50%);
+}
+.menu-item{
+ text-align: center;
+ margin-bottom: 1em;
+}
+.menu-link{
+  font-family: var(--font-action);
+  color: rgb(63, 63, 63);
+  font-size: 1.8em;
+  transition: color 0.5s;
+}
+.menu-link:hover{
+  color: var(--color-secundary);
+}
+.social-media{
+  position: absolute;
+  bottom: 15em;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+.social-media i{
+  background-color: rgb(63, 63, 63);
+  color: white;
+  height: 2em;
+  width: 2em;
+  font-size: 1.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  transition: background-color 0.5s;
+}
+.social-media i:hover{
+  background-color: var(--color-secundary);
 }
