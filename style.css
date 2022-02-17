@@ -23,9 +23,12 @@
   list-style: none;
   text-decoration: none;
 }
+body{
+  background-color: rgb(240, 240, 240);
+}
 .burger{
   width: 3em;
-  height: 3em;
+  height: 2em;
   position: fixed;
   z-index: 100;
   right: 1.3em;
@@ -41,7 +44,7 @@
 }
 .line{
   width: 100%;
-  height: 0.5em;
+  height: 0.3em;
   background-color: white;
   box-shadow: 0.1em 0.1em 1px black;
   transition: transform 1s;
@@ -50,8 +53,8 @@
   transform-origin: 0%;
   transform: rotateZ(45deg);
   background-color: rgb(216, 216, 216);
-  top: 0.2em;
   box-shadow: none;
+  width: 80%;
 }
 .show-menu #line2{
   opacity: 0;
@@ -62,8 +65,8 @@
   transform-origin: 0%;
   transform: rotateZ(-45deg);
   background-color: rgb(216, 216, 216);
-  top: -0.2em;
   box-shadow: none;
+  width: 80%;
 }
 .burger span{
   position: absolute;
@@ -224,4 +227,56 @@ header{
 }
 .social-media i:hover{
   background-color: var(--color-secundary);
+}
+.sessao-conhecimentos{
+  max-width: 900px;
+  height: 40em;
+  margin: 1em auto;
+  background-color: white;
+  padding: 1em;
+}
+.sessao-header h1{
+  text-align: center;
+  margin-bottom: 1em;
+  font-size: 2em;
+}
+.grade-conhecimento{
+  background-image: url(images/dev-vector.png);
+  background-repeat: no-repeat;
+  background-size: 40%;
+  background-position: center center;
+}
+.linha01{
+  margin-bottom: 3em;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.linha02{
+  margin-bottom: 3em;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.conhecimento{
+  width: 35%;
+  margin-bottom: 2em;
+}
+.conhecimento-header{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  font-size: 1.2em;
+}
+.conhecimento-header i{
+  font-size: 2em;
+}
+.conhecimento-header h3{
+  margin-left: 0.5em;
+  margin-top: 0.3em;
+}
+.conhecimento p{
+  text-align: justify;
 }
