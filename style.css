@@ -263,9 +263,9 @@ header{
 .sessao-conhecimentos{
   max-width: 900px;
   min-height: 10em;
-  margin: 1em auto;
+  margin: 0em auto;
   background-color: white;
-  padding: 1em;
+  padding: 1em 1em;
 }
 .sessao-header h1{
   font-family: var(--font-primary);
@@ -319,7 +319,7 @@ header{
 .sessao-projetos{
   max-width: 900px;
   min-height: 10em;
-  margin: 1em auto;
+  margin: 0.2em auto 0em auto;
   background-color: white;
   padding: 1em;
 }
@@ -379,8 +379,102 @@ header{
   margin-top: 5%;
 }
 .card:hover .card-info{
-  bottom: 0em;
   opacity: 1;
   visibility: visible;
+  bottom: 0em;
+  cursor: pointer;
+}
+.sessao-contato{
+  width: 100%;
+  height: 70vh;
+  margin: auto;
+  margin: 0em auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  background-image: url(images/bg-contato-lateral.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-shadow: inset 0em 0em 1em 0.1em rgba(0, 0, 0, 0.5);
+  background-attachment: fixed;
+}
+.contato-wrapper{
+  width: 932px;
+  height: 35em;
+  display: flex;
+  justify-content: space-between;
+}
+.contato-left{
+  width: 48%;
+  background-color: rgb(240, 240, 240);
+  padding: 3em 0em 0em 0em;
+}
+.contato-right{
+  width: 48%;
+  background-color: rgb(240, 240, 240);
+  padding: 3em 0em 0em 0em;
+}
+.sessao-contato h1{
+  width: 100%;
+  text-align: center;
+  font-family: var(--font-primary);
+  color: black;
+  font-size: 2em;
+  font-weight: lighter;
+}
+.sessao-contato form{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.input-group{
+  position: relative;
+}
+.input-group textarea{
+  padding-top: 0.1em;
+  max-width: 12em;
+  max-height: 5em;
+}
+.field{
+  background: transparent;
+  border:none;
+  min-width: 10em;
+  font-size: 1.3em;
+  font-family: var(--color-secundary);
+  border-bottom: 1px dashed rgba(0, 0, 0, 0.5);
+  height: 1.5em;
+  outline: none;
+  margin: 1em 0em;
+}
+.field-label{
+  position: absolute;
+  left: 0;
+  top: 1.5em;
+  font-family: var(--font-secundary);
+  font-size: 1.2em;
+  transition: all 0.3s;
+}
+.field:focus{
+  border-bottom: 1px solid;
+}
+.field:focus ~ label{
+  top: 0;
+  font-size: 1em;
+}
+.btn-submit{
+  font-family: var(--font-action);
+  font-size: 1em;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: white;
+  background: var(--color-primary);  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, var(--color-primary), var(--color-secundary));  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, var(--color-primary), var(--color-secundary)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  padding: 0.5em 5em;
+  border: none;
+  border-radius: 2px;
   cursor: pointer;
 }
