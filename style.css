@@ -266,9 +266,9 @@ header{
   margin: 1em auto;
   background-color: white;
   padding: 1em;
-  overflow: hidden;
 }
 .sessao-header h1{
+  font-family: var(--font-primary);
   text-align: center;
   margin-bottom: 1em;
   font-size: 2em;
@@ -302,14 +302,85 @@ header{
   display: flex;
   flex-direction: row;
   font-size: 1.2em;
+  align-items: center;
 }
 .conhecimento-header i{
   font-size: 2em;
 }
 .conhecimento-header h3{
+  font-family: var(--font-secundary);
   margin-left: 0.5em;
-  margin-top: 0.3em;
 }
 .conhecimento p{
+  font-family: Arial, Helvetica, sans-serif;
+  text-indent: 0.5em;
   text-align: justify;
+}
+.sessao-projetos{
+  max-width: 900px;
+  min-height: 10em;
+  margin: 1em auto;
+  background-color: white;
+  padding: 1em;
+}
+.projetos{
+  display: flex;
+  justify-content: space-around;  
+}
+.card{
+  width: 17em;
+  height: 22em;
+  position: relative;
+  background-color: rgb(170, 170, 170);
+}
+.card-img-wrapper{
+  width: 100%;
+  height: 100%;
+}
+.card-img-wrapper img{
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+.card-info{
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  bottom: -1em;
+  padding: 1em;
+  background-color: rgba(255, 255, 255, 0.836);
+  box-shadow: 0em 0.2em .3em rgba(0, 0, 0, 0.3);
+
+  transition: all .3s;
+}
+.card-info h2{
+  font-family: var(--font-primary);
+  font-size: 1.5em;
+  line-height: 1em;
+  font-weight: 900;
+}
+.card-info h3{
+  font-family: var(--font-secundary);
+  font-size: 1.3em;
+  margin-top: .2em;
+  margin-bottom: .2em;
+}
+.card-info p{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1em;
+  line-height: 1em;
+}
+.card-info button{
+  width: 6em;
+  height: 2em;
+  font-family: var(--font-action);
+  font-size: 1em;
+  margin-left: 60%;
+  margin-top: 5%;
+}
+.card:hover .card-info{
+  bottom: 0em;
+  opacity: 1;
+  visibility: visible;
+  cursor: pointer;
 }
